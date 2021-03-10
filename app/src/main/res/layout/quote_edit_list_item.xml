@@ -18,20 +18,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/quote_from_edit"
         android:textSize="18sp"
+        android:layout_marginBottom="20dp"
         android:hint="명언 출처" />
 
-    <Button
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/quote_delete_btn"
-        android:text="삭제"
-        android:textSize="18sp" />
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/quote_delete_btn"
+            android:text="삭제"
+            android:textSize="18sp"
+            android:background="@drawable/button_left_round"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/quote_modify_btn"
-        android:text="수정"
-        android:textSize="18sp" />
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/quote_modify_btn"
+            android:text="수정"
+            android:textSize="18sp"
+            android:background="@drawable/button_right_round"/>
+    </LinearLayout>
 </LinearLayout>

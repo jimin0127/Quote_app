@@ -1,12 +1,13 @@
 package com.example.todayquote
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 
 class QuoteListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,10 @@ class QuoteListActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT).show()
 
         val recyclerView = findViewById<RecyclerView>(R.id.quote_list)
+        val dividerItemDecoration =
+            DividerItemDecoration(recyclerView.context, LinearLayoutManager(this).orientation)
+        recyclerView.addItemDecoration(dividerItemDecoration)
+
 
         recyclerView.setHasFixedSize(false)
         recyclerView.layoutManager = LinearLayoutManager(this)

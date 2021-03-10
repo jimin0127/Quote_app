@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 // import java.util.Random
 import kotlin.random.Random
@@ -89,60 +90,19 @@ class QuoteMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*
-        // 수정 가능한 Quote를 저장할 리스트 객체 생성하고 명언 객체 3개 넣어보기
-        // 명언 내용은 맘대로
-        var quotes = mutableListOf<Quote>()
-        quotes.add(Quote(1, "명언 내용 1", "출처 1"))
-        quotes.add(Quote(2, "명언 내용 2", "출처 2"))
-        quotes.add(Quote(3, "명언 내용 3", "출처 3"))
-
-        var randomIndex = Random.nextInt(0, 3)
-        var randomQuote = quotes[randomIndex]
-        // var randomQuote = quotes.get(randomIndex)
-
-        // 뷰 객체를 이용해서 출력
-        quoteText.text = randomQuote.text
-        // quoteText.setText(randomQuote.text)
-        quoteFrom.text = randomQuote.from
-        // Log.d("mytag", quoteText.getText().toString())
-        Log.d("mytag", quoteText.text.toString())
-        */
-
-
-
-        // resources
-        // getResources()
-
-        /*
-        val sp = getSharedPreferences("filename", Context.MODE_PRIVATE)
-
-        // 데이터를 저장
-        val editor = sp.edit()
-
-        // 키, 값 쌍이 필요 (자바의 맵, 파이썬의 딕셔너리)
-        editor.putInt("key1", 1)
-        editor.putString("key2", "Hello")
-        editor.putBoolean("make_alarm", true)
-        editor.putInt("volume", 100)
-
-        // 실제 데이터 저장을 위해서는 apply 메소드 호출
-        editor.apply()
-        // editor.commit()
-
-        // 지우기
-        // editor.remove("key1")
-        // editor.clear()
-
-        // 덮어쓰기(overwrite, = 수정)
-        editor.putString("key2", "World")
-        editor.remove("key2")
-        editor.apply()
-
-        var value1 = sp.getInt("key1", -1)
-        var value2 = sp.getString("key2", "default")
-        // sp.getString("volume", null)
-        */
+        val resetQuoteBtn = findViewById<ImageButton>(R.id.reset_btn)
+        resetQuoteBtn.setOnClickListener{
+            if(quotes.isNotEmpty()) {
+                val randomIdx = Random.nextInt(quotes.size)
+                val randomQuote = quotes[randomIdx]
+                quoteText.text = randomQuote.text
+                quoteFrom.text = randomQuote.from
+            } else {
+                // 없다면
+                quoteText.text = "저장된 명언이 없습니다."
+                quoteFrom.text = ""
+            }
+        }
     }
 }
 

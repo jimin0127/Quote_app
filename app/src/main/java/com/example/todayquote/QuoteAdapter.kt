@@ -53,6 +53,7 @@ class QuoteAdapter(val dataList: List<Quote>) :
             quoteFrom.text = quote.from
 
             if(quote.from.isBlank()) {
+                shareBtn.setBackgroundResource(R.drawable.button)
                 fromSearchBtn.visibility = View.GONE
             }
         }

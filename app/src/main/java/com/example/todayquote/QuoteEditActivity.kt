@@ -3,6 +3,7 @@ package com.example.todayquote
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -25,9 +26,13 @@ class QuoteEditActivity : AppCompatActivity() {
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.quote_edit_list)
+
         recyclerView.setHasFixedSize(false)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = QuoteEditAdapter(editQuotes)
+        val dividerItemDecoration =
+            DividerItemDecoration(recyclerView.context, LinearLayoutManager(this).orientation)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
     }
 }

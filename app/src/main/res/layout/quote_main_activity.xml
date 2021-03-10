@@ -2,11 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
+
+    <ImageButton
+        android:id="@+id/reset_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/reset"
+        android:layout_gravity="left"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="120dp"
+        android:background="#ffffff"
+        />
+
 
     <TextView
         android:id="@+id/quote_text"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -19,19 +34,25 @@
         android:id="@+id/quote_from"
         android:textSize="14sp"
         android:gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <Button
         android:id="@+id/quote_edit_btn"
         android:text="명언 편집"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_marginBottom="5dp"/>
 
     <Button
         android:id="@+id/quote_list_btn"
         android:text="명언 보기"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"/>
 
 </LinearLayout>
